@@ -37,7 +37,7 @@
                                     <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yUU-Cj-vd3" kind="show" id="aT6-Ei-X4c"/>
+                                    <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMR-az-zvo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSY-PJ-hx8">
@@ -58,6 +58,12 @@
                     <navigationItem key="navigationItem" title="レストラン検索" id="xyL-7Z-pSN">
                         <barButtonItem key="backBarButtonItem" title=" " id="Fwi-UN-BKS"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="OqZ-lC-l0S" id="tWr-0C-9zw"/>
+                        <outlet property="searchButton" destination="FwI-fY-dRq" id="Z3s-aF-Lbj"/>
+                        <outlet property="searchTextField" destination="0Os-Ub-gYd" id="v3g-wr-Ekz"/>
+                        <segue destination="yUU-Cj-vd3" kind="show" id="Kfz-mR-iyJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,7 +258,9 @@
                         <viewLayoutGuide key="safeArea" id="lP2-Em-ZQH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="検索結果一覧" id="Up4-a9-VGw"/>
+                    <navigationItem key="navigationItem" title="検索結果一覧" id="Up4-a9-VGw">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ker-cz-zei"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="yUU-Cj-vd3" kind="show" id="vkD-Ct-dae"/>
                     </connections>
@@ -263,7 +271,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aT6-Ei-X4c"/>
+        <segue reference="Kfz-mR-iyJ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
