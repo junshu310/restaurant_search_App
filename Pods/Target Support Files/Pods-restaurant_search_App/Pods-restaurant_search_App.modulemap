@@ -1,0 +1,6 @@
+framework module Pods_restaurant_search_App {
+  umbrella header "Pods-restaurant_search_App-umbrella.h"
+
+  export *
+  module * { export * }
+}
