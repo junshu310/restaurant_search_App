@@ -19,25 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OqZ-lC-l0S">
-                                <rect key="frame" x="0.0" y="150" width="414" height="746"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Os-Ub-gYd">
-                                <rect key="frame" x="20" y="108" width="332" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="キーワードを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Os-Ub-gYd">
+                                <rect key="frame" x="10" y="108" width="354" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwI-fY-dRq">
-                                <rect key="frame" x="360" y="108" width="34" height="34"/>
+                                <rect key="frame" x="370" y="106" width="38" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal">
                                     <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
-                                    <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMR-az-zvo"/>
+                                    <action selector="search:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fg3-zc-euX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSY-PJ-hx8">
@@ -47,10 +47,15 @@
                                 <state key="normal" title="リストで表示する▶︎">
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
-                                <connections>
-                                    <segue destination="hAe-WG-jem" kind="show" id="Qvw-MK-Qlk"/>
-                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="検索範囲：1km" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzk-5q-Und" customClass="CustomTextField" customModule="restaurant_search_App" customModuleProvider="target">
+                                <rect key="frame" x="256" y="150" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="textColor" red="0.2074095011" green="0.47166991229999999" blue="0.96720558400000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -60,9 +65,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="OqZ-lC-l0S" id="tWr-0C-9zw"/>
+                        <outlet property="rangeTextField" destination="zzk-5q-Und" id="ARS-cv-dTp"/>
                         <outlet property="searchButton" destination="FwI-fY-dRq" id="Z3s-aF-Lbj"/>
                         <outlet property="searchTextField" destination="0Os-Ub-gYd" id="v3g-wr-Ekz"/>
-                        <segue destination="yUU-Cj-vd3" kind="show" id="Kfz-mR-iyJ"/>
+                        <segue destination="yUU-Cj-vd3" kind="show" identifier="toDetail" id="Kfz-mR-iyJ"/>
+                        <segue destination="hAe-WG-jem" kind="show" identifier="toList" id="EUx-FJ-4YN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -262,7 +269,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="ker-cz-zei"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="yUU-Cj-vd3" kind="show" id="vkD-Ct-dae"/>
+                        <segue destination="yUU-Cj-vd3" kind="show" identifier="toDetailList" id="vkD-Ct-dae"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y2h-UM-dDO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

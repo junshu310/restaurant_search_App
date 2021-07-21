@@ -66,5 +66,10 @@
 	<string>To search shops</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>To search shops</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
