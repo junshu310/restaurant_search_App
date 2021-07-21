@@ -11,6 +11,7 @@ import SDWebImage
 class ShopListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var passedShopData = [ShopData]()
+    var indexNumber = Int()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -65,5 +66,20 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        indexNumber = indexPath.row
+        
+        performSegue(withIdentifier: "listToDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "listToDetail" {
+            let detailVC = segue.destination as! ShopDetailViewController
+            detailVC.detailShopData.append(passedShopData[indexNumber])
+        }
     }
 }

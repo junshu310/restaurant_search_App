@@ -227,6 +227,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             indexNumber = nameArray.firstIndex(of: (view.annotation?.title)!!)!
             print(indexNumber)
         }
+        
+        performSegue(withIdentifier: "mapToDetail", sender: nil)
     }
     
     @IBAction func toList(_ sender: Any) {
@@ -234,6 +236,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "mapToDetail" {
+            let detailVC = segue.destination as! ShopDetailViewController
+            detailVC.detailShopData.append(annotationShopData[indexNumber])
+        }
         
         if segue.identifier == "toList" {
             let shopListVC = segue.destination as! ShopListViewController
