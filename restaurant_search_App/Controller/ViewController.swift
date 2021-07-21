@@ -229,14 +229,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
+    @IBAction func toList(_ sender: Any) {
+        performSegue(withIdentifier: "toList", sender: nil)
+    }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        <#code#>
-//    }
-//
-//    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-//        <#code#>
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toList" {
+            let shopListVC = segue.destination as! ShopListViewController
+            shopListVC.passedShopData = annotationShopData
+        }
+    }
     
 }
 
