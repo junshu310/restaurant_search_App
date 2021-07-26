@@ -15,6 +15,8 @@ class ShopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var shopImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoTableView: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     let shopInfoArray = ["店舗名", "住所", "営業時間", "アクセス", "予算", "駐車場"]
     
@@ -26,9 +28,6 @@ class ShopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         shopImageView.sd_setImage(with: URL(string: detailShopData[0].shopImage!), completed: nil)
         nameLabel.text = detailShopData[0].name
         
-        infoTableView.delegate = self
-        infoTableView.dataSource = self
-        
         if detailShopData.isEmpty != true {
             infoArray.append(detailShopData[0].name!)
             infoArray.append(detailShopData[0].address!)
@@ -37,6 +36,26 @@ class ShopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             infoArray.append(detailShopData[0].budget!)
             infoArray.append(detailShopData[0].parking!)
         }
+        
+        infoTableView.delegate = self
+        infoTableView.dataSource = self
+        
+        infoTableView.estimatedRowHeight = 100
+        infoTableView.rowHeight = UITableView.automaticDimension
+        infoTableView.tableFooterView = UIView()
+        infoTableView.allowsSelection = false
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        tableViewHeight.constant = CGFloat(infoTableView.contentSize.height)
+        
+        let scrollViewHeight = shopImageView.bounds.size.height + 8 + nameLabel.bounds.size.height + 8 + tableViewHeight.constant
+        scrollView.contentSize.height = scrollViewHeight
+        print("高さ\(scrollViewHeight)")
+        
     }
     
 
