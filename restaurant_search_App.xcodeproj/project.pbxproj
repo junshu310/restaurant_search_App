@@ -19,8 +19,6 @@
 		94AEDB0D26A40FFC0087573E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AEDB0C26A40FFB0087573E /* CustomTextField.swift */; };
 		94AEDB1126A7F29D0087573E /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AEDB1026A7F29D0087573E /* ShopListViewController.swift */; };
 		94AEDB1926A819D30087573E /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AEDB1826A819D30087573E /* ShopDetailViewController.swift */; };
-		94AEDB1E26A821340087573E /* ShopInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AEDB1C26A821340087573E /* ShopInfoCell.swift */; };
-		94AEDB1F26A821340087573E /* ShopInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94AEDB1D26A821340087573E /* ShopInfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +37,6 @@
 		94AEDB0C26A40FFB0087573E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		94AEDB1026A7F29D0087573E /* ShopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
 		94AEDB1826A819D30087573E /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
-		94AEDB1C26A821340087573E /* ShopInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInfoCell.swift; sourceTree = "<group>"; };
-		94AEDB1D26A821340087573E /* ShopInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopInfoCell.xib; sourceTree = "<group>"; };
 		B62B8A42C1B8E5A93264F6F9 /* Pods-restaurant_search_App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-restaurant_search_App.debug.xcconfig"; path = "Target Support Files/Pods-restaurant_search_App/Pods-restaurant_search_App.debug.xcconfig"; sourceTree = "<group>"; };
 		BEBD9CF6EA29B2F8AE0DE375 /* Pods-restaurant_search_App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-restaurant_search_App.release.xcconfig"; path = "Target Support Files/Pods-restaurant_search_App/Pods-restaurant_search_App.release.xcconfig"; sourceTree = "<group>"; };
 		F800BF8656595E83901488C1 /* Pods_restaurant_search_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_restaurant_search_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,8 +130,6 @@
 			children = (
 				94AEDAF4269D8F660087573E /* Main.storyboard */,
 				94AEDB0C26A40FFB0087573E /* CustomTextField.swift */,
-				94AEDB1C26A821340087573E /* ShopInfoCell.swift */,
-				94AEDB1D26A821340087573E /* ShopInfoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -202,7 +196,6 @@
 				94AEDAFB269D8F6C0087573E /* LaunchScreen.storyboard in Resources */,
 				94AEDAF8269D8F6C0087573E /* Assets.xcassets in Resources */,
 				94AEDAF6269D8F660087573E /* Main.storyboard in Resources */,
-				94AEDB1F26A821340087573E /* ShopInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +254,6 @@
 				94AEDAF3269D8F660087573E /* ViewController.swift in Sources */,
 				94AEDB1126A7F29D0087573E /* ShopListViewController.swift in Sources */,
 				94AEDB1926A819D30087573E /* ShopDetailViewController.swift in Sources */,
-				94AEDB1E26A821340087573E /* ShopInfoCell.swift in Sources */,
 				94AEDAEF269D8F660087573E /* AppDelegate.swift in Sources */,
 				94AEDAF1269D8F660087573E /* SceneDelegate.swift in Sources */,
 			);

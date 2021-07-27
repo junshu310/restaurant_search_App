@@ -173,7 +173,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         searchTextField.resignFirstResponder()
         SVProgressHUD.show()
         
-        let urlString = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKey)&lat=\(latitudeValue)&lng=\(longitudeValue)&range=\(range)&count=50&keyword=\(searchTextField.text!)&format=json"
+        let urlString = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=\(APIKey)&lat=\(latitudeValue)&lng=\(longitudeValue)&range=\(range)&count=100&keyword=\(searchTextField.text!)&format=json"
         
         let analyticsModel = AnalyticsModel(url: urlString, latitude: latitudeValue, longitude: longitudeValue, range: range)
         
@@ -186,10 +186,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         //データの取得完了
         SVProgressHUD.dismiss()
-        self.shopDataArray = shopDataArray
-        self.resultsAvailable = resultsCount
-        //検索結果からピンを表示する
-        addAnnotaton(shopData: self.shopDataArray)
+        
+        if resultsCount == 0 {
+            let alert = UIAlertController(title: "検索結果なし", message: "検索条件を変更して下さい。", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
+            
+            self.shopDataArray = shopDataArray
+            self.resultsAvailable = resultsCount
+            //検索結果からピンを表示する
+            addAnnotaton(shopData: self.shopDataArray)
+        }
     }
     
     func addAnnotaton(shopData:[ShopData]) {
