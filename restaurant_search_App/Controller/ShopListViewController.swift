@@ -34,6 +34,10 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "検索結果\"\(passedShopData.count)\"件"
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -73,6 +77,8 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
         indexNumber = indexPath.row
         
         performSegue(withIdentifier: "listToDetail", sender: nil)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

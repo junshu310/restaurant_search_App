@@ -30,6 +30,7 @@ class ShopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         infoTableView.delegate = self
         infoTableView.dataSource = self
         
+        infoTableView.separatorInset.left = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,10 +56,25 @@ class ShopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         infoTableView.rowHeight = UITableView.automaticDimension
         infoTableView.tableFooterView = UIView()
         infoTableView.allowsSelection = false
+        
+        print(infoArray)
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//
+//        tableViewHeight.constant = CGFloat(infoTableView.contentSize.height)
+//        let imgHeight = shopImageView.frame.size.height
+//        let labelHeight = nameLabel.frame.size.height
+//        let buttonHeight = urlButton.frame.size.height
+//        let scrollViewHeight = imgHeight + 8 + labelHeight + 8 + buttonHeight + 8 + tableViewHeight.constant
+//        scrollView.contentSize.height = scrollViewHeight
+//        print("高さ\(scrollViewHeight)")
+//
+//    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
         tableViewHeight.constant = CGFloat(infoTableView.contentSize.height)
         let imgHeight = shopImageView.frame.size.height
@@ -67,7 +83,6 @@ class ShopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         let scrollViewHeight = imgHeight + 8 + labelHeight + 8 + buttonHeight + 8 + tableViewHeight.constant
         scrollView.contentSize.height = scrollViewHeight
         print("高さ\(scrollViewHeight)")
-        
     }
     
 
