@@ -59,7 +59,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        rangeButton.setTitle("検索範囲を指定", for: .normal)
     }
     
     @objc func tap() {
@@ -216,9 +215,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             annotation = MKPointAnnotation()
             //緯度経度を指定
             annotation.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(shopData[i].latitude!), CLLocationDegrees(shopData[i].longitude!))
-            //タイトル・サブタイトル
             annotation.title = shopData[i].name
-//            annotation.subtitle = shopData[i].
             
             //選択された情報(shopData[i])を渡したい。
             annotationShopData.append(shopData[i])

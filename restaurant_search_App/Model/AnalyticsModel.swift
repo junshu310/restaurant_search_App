@@ -52,7 +52,7 @@ class AnalyticsModel {
                     let json: JSON = try JSON(data: response.data!)
                     var resultsAvailable = json["results"]["results_available"].int
                     
-//                    //最大取得件数を100件にする
+                    //最大取得件数を100件にする
                     if resultsAvailable! > 100 {
                         resultsAvailable = 100
                     }

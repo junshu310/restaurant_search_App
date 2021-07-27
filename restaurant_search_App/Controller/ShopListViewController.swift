@@ -29,7 +29,6 @@ class ShopListViewController: UIViewController, UITableViewDelegate, UITableView
             emptyLabel.text = "検索結果がありません。\n条件を変更して検索して下さい。"
             emptyLabel.textColor = UIColor.lightGray
             emptyLabel.numberOfLines = 2
-//            emptyLabel.font =
             self.view.addSubview(emptyLabel)
         }
     }
