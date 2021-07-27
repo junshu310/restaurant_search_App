@@ -126,4 +126,12 @@ class ShopDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         self.present(alert, animated: true, completion: nil)
     }
 
+    @IBAction func share(_ sender: Any) {
+        
+        let shareURL: String = detailShopData[0].url!
+        let item = [shareURL] as [Any]
+        
+        let activityVC = UIActivityViewController(activityItems: item, applicationActivities: nil)
+        present(activityVC, animated: true, completion: nil)
+    }
 }
